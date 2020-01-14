@@ -23,12 +23,14 @@ export default class App extends React.Component {
 
   render() {
     const elements = this.state.products.map(item => <ProductListItem name={item.name}
+      id={item.productId}
+      setView={this.props.setView}
       image={item.image}
       price={item.price}
       shortDescription={item.shortDescription}
       key={item.productId}/>);
     return (
-      <div className="card-container d-flex flex-row flex-wrap justify-content-center pt-5">
+      <div className="card-container d-flex flex-row flex-wrap justify-content-center">
         {elements}
       </div>);
   }
