@@ -7,6 +7,7 @@ export default class ProductDetails extends React.Component {
       product: null
     };
     this.handleBackClick = this.handleBackClick.bind(this);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
   }
 
   getProductDetails() {
@@ -19,6 +20,10 @@ export default class ProductDetails extends React.Component {
 
   handleBackClick() {
     this.props.setView('catalog', {});
+  }
+
+  handleAddToCart() {
+    this.props.addToCart(this.state.product);
   }
 
   componentDidMount() {
@@ -45,6 +50,7 @@ export default class ProductDetails extends React.Component {
               <h5>{this.state.product.name}</h5>
               <p className='text-muted'>${price}</p>
               <p>{this.state.product.shortDescription}</p>
+              <button type="button" className="btn btn-primary" onClick={this.handleAddToCart}>Add to Cart</button>
             </div>
           </div>
           <p className='m-3'>{this.state.product.longDescription}</p>
