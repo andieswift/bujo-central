@@ -1,4 +1,12 @@
 .img-card{
   object-fit: contain;
-  height: 30vh;
+  height: 15vh;
+}
+
+.hgt-100{
+  height: 93.5vh;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
