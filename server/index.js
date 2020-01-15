@@ -47,7 +47,7 @@ app.get('/api/products/:productsId', (req, res, next) => {
   db.query(sql, params)
     .then(result => {
       if (result.rows.length === 0) {
-        next(new ClientError(`product with id ${productId} could not be found`, 404));
+        throw new ClientError(`product with id ${productId} could not be found`, 404);
       } else {
         res.status(200);
         res.json(result.rows[0]);
@@ -73,7 +73,8 @@ app.get('/api/cart', (req, res, next) => {
     db.query(sql, params)
       .then(result => {
         res.status(200).json(result.rows);
-      });
+      })
+      .catch(err => next(err));
   } else {
     res.status(200).json([]);
   }
@@ -82,7 +83,7 @@ app.get('/api/cart', (req, res, next) => {
 app.post('/api/cart', (req, res, next) => {
   const productId = parseInt(req.body.productId);
   if (!productId || isNaN(productId) || productId <= 0) {
-    next(new ClientError(`${req.body.productId} is not a valid productId`, 400));
+    throw new ClientError(`${req.body.productId} is not a valid productId`, 400);
   }
 
   const sql = `
@@ -95,7 +96,7 @@ app.post('/api/cart', (req, res, next) => {
   db.query(sql, params)
     .then(priceResult => {
       if (priceResult.rows.length === 0) {
-        next(new ClientError(`product with id ${productId} could not be found`, 400));
+        throw new ClientError(`product with id ${productId} could not be found`, 400);
       }
       if (req.session.cartId) {
         return ({ cartId: req.session.cartId, price: priceResult.rows[0].price });
@@ -133,7 +134,7 @@ app.post('/api/cart', (req, res, next) => {
               join "products" as "p" using ("productId")
               where "c"."cartItemId" = $1`;
       const params = [result.rows[0].cartItemId];
-      db.query(sql, params).then(cartResult => res.status(201).json(cartResult.rows[0]));
+      return db.query(sql, params).then(cartResult => res.status(201).json(cartResult.rows[0]));
     })
     .catch(err => next(err));
 });
