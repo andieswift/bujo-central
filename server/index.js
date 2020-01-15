@@ -139,8 +139,30 @@ app.post('/api/cart', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/orders', (req, res, next) => {
+  if (!req.session.cartId) {
+    throw new ClientError('it looks like you havent made a cart yet', 400);
+  }
+  if (!req.body.name || !req.body.creditCard || !req.body.shippingAddress) {
+    throw new ClientError('name, creditCard, and shippingAddress are required fields', 400);
+  }
+  const insertOrder = `
+                insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
+                values($1, $2, $3, $4)
+                returning "orderId", "createdAt", "name", "creditCard", "shippingAddress"
+                    `;
+  const params = [req.session.cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
+  db.query(insertOrder, params)
+    .then(insertResult => {
+      delete req.session.cartId;
+      res.status(201).json(insertResult.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
+
 });
 
 app.use((err, req, res, next) => {
