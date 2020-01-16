@@ -33,11 +33,11 @@ export default class App extends React.Component {
   }
 
   handleShippingAddressChange() {
-    event.preventDefault();
     this.setState({ shippingAddress: event.target.value });
   }
 
   handleOrder() {
+    event.preventDefault();
     if (this.state.name !== '' && this.state.creditCard !== '' && this.state.shippingAddress !== '') {
       this.props.placeOrder({
         name: this.state.name,
