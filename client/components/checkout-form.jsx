@@ -33,6 +33,7 @@ export default class App extends React.Component {
   }
 
   handleShippingAddressChange() {
+    event.preventDefault();
     this.setState({ shippingAddress: event.target.value });
   }
 
@@ -51,7 +52,7 @@ export default class App extends React.Component {
       <div>
         <h2>My Cart</h2>
         <p className="text-muted">Order Total: ${this.getTotal()}</p>
-        <form>
+        <form onSubmit= {this.handleOrder}>
           <div className="form-group">
             <label>Name</label>
             <input type="text" value = {this.state.name} onChange={this.handleNameChange} className="form-control"></input>
@@ -64,10 +65,10 @@ export default class App extends React.Component {
             <label>Shipping Address</label>
             <textarea value={this.state.shippingAddress} onChange={this.handleShippingAddressChange} className="form-control" rows="5"></textarea>
           </div>
+          <p className=" m-1 text-muted cursor-pointer d-inline" onClick={this.handleBackClick}>
+            <i className="fas fa-arrow-left"></i> Continue Shopping</p>
+          <button className="btn btn-primary float-right mr-2">Place Order</button>
         </form>
-        <p className=" m-1 text-muted cursor-pointer d-inline" onClick={this.handleBackClick}>
-          <i className="fas fa-arrow-left"></i> Continue Shopping</p>
-        <button type="button" className="btn btn-primary float-right mr-2" onClick={this.handleOrder}>Place Order</button>
       </div>
     );
   }
