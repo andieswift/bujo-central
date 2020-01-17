@@ -177,7 +177,7 @@ app.delete('/api/cart', (req, res, next) => {
       if (!result.rowCount) {
         throw new ClientError(`cannot find item with cartItemId: ${cartItemId}`, 404);
       } else {
-        res.status(204).json({});
+        res.status(204).json();
       }
     }).catch(err => next(err))
   ;

@@ -29,7 +29,7 @@ function CartSummary(props) {
     }
   }
 
-  const cartItems = props.cartItems.map(item => <CartSummaryItem key={item.cartItemId} product={item} />);
+  const cartItems = props.cartItems.map(item => <CartSummaryItem deleteItem={props.deleteItem} key={item.cartItemId} product={item} />);
 
   return (
     <div>
