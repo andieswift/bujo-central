@@ -160,6 +160,29 @@ app.post('/api/orders', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.delete('/api/cart', (req, res, next) => {
+  let cartItemId = req.body.cartItemId;
+  if (isNaN(cartItemId) || !cartItemId) {
+    throw new ClientError('Cart Id must be a positive integer', 400);
+  }
+
+  cartItemId = parseInt(cartItemId);
+  const deleteSql = `
+                    delete from "cartItems"
+                    where "cartItemId" = $1
+                    `;
+  const params = [cartItemId];
+  db.query(deleteSql, params)
+    .then(result => {
+      if (!result.rowCount) {
+        throw new ClientError(`cannot find item with cartItemId: ${cartItemId}`, 404);
+      } else {
+        res.status(204).json({});
+      }
+    }).catch(err => next(err))
+  ;
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 
