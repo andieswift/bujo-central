@@ -20,6 +20,7 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
   }
 
   setView(name, params) {
@@ -47,6 +48,21 @@ export default class App extends React.Component {
         cartCopy.push(cartItems);
         this.setState({ cart: cartCopy });
       });
+  }
+
+  removeFromCart(product) {
+    fetch('/api/cart', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ cartItemId: product.cartItemId })
+    }).then(response => {
+      const cartCopy = [...this.state.cart];
+      const index = cartCopy.findIndex(element => element.cartItemId === product.cartItemId);
+      cartCopy.splice(index, 1);
+      this.setState({ cart: cartCopy });
+    });
   }
 
   placeOrder(orderInfo) {
@@ -79,7 +95,7 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'catalog') {
       view = <ProductList setView={this.setView} />;
     } else if (this.state.view.name === 'cart') {
-      view = <CartSummary cartItems = {this.state.cart} setView={this.setView}/>;
+      view = <CartSummary deleteItem={this.removeFromCart} cartItems = {this.state.cart} setView={this.setView}/>;
     } else {
       view = <CheckoutForm placeOrder = {this.placeOrder} setView={this.setView} cartItems={this.state.cart} />;
     }
