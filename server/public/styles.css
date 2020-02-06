@@ -1,10 +1,10 @@
 .img-card{
   object-fit: contain;
-  height: 15vh;
+  height: 200px;
 }
 
 .hgt-100{
-  min-height: 93.5vh;
+  min-height: 100vh;
 }
 
 .cursor-pointer{
@@ -16,5 +16,5 @@
 }
 
 .fa-times-circle{
-  font-size: 1.5em;
+  font-size: 2rem;
 }

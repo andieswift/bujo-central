@@ -14,11 +14,11 @@ function Header(props) {
 
   return (
     <div className= 'p-3 col-12 bg-dark'>
-      <div className='ml-5'>
+      <div className='ml-2'>
         <i className='text-light fas fa-dollar-sign'></i>
         <h5 className='ml-2 d-inline text-light'>Wicked Sales</h5>
-        <i className='text-light mt-1 mr-5 fas fa-shopping-cart float-right cursor-pointer' onClick={handleCartClick}></i>
-        <p className='mr-2 d-inline text-light float-right'>{item}</p>
+        <i className='text-light mt-1 mr-2 fas fa-shopping-cart float-right cursor-pointer' onClick={handleCartClick}></i>
+        <p className='mr-2 d-inline text-light float-right cursor-pointer' onClick={handleCartClick}>{item}</p>
 
       </div>
     </div>

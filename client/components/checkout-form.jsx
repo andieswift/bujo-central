@@ -5,7 +5,8 @@ export default class App extends React.Component {
     this.state = {
       name: '',
       creditCard: '',
-      shippingAddress: ''
+      shippingAddress: '',
+      emptyfields: ''
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleCreditCardChange = this.handleCreditCardChange.bind(this);
@@ -44,6 +45,8 @@ export default class App extends React.Component {
         creditCard: this.state.creditCard,
         shippingAddress: this.state.shippingAddress
       });
+    } else {
+      this.setState({ emptyfields: 'Please fill out all the feilds.' });
     }
   }
 
@@ -65,6 +68,7 @@ export default class App extends React.Component {
             <label>Shipping Address</label>
             <textarea value={this.state.shippingAddress} onChange={this.handleShippingAddressChange} className="form-control" rows="5"></textarea>
           </div>
+          <p className="text-danger">{this.state.emptyfields}</p>
           <p className=" m-1 text-muted cursor-pointer d-inline" onClick={this.handleBackClick}>
             <i className="fas fa-arrow-left"></i> Continue Shopping</p>
           <button className="btn btn-primary float-right mr-2">Place Order</button>

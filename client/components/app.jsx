@@ -102,7 +102,7 @@ export default class App extends React.Component {
     return (
       <>
         <Header setView= {this.setView} cartItemCount = {this.state.cart.length}/>
-        <div className="p-5 hgt-100 bg-light">
+        <div className="p-3 hgt-100 bg-light">
           {view}
         </div>
       </>);

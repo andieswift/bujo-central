@@ -6,7 +6,8 @@ function CartSummaryItem(props) {
     props.deleteItem(props.product);
   }
   return (
-    <div className="card m-2 p-2">
+    <div className="card container w-100 p-2 mb-3">
+      <h2>{props.product.name} <i className="far fa-times-circle cursor-pointer float-right" onClick={handleCancle}></i></h2>
       <div className="row">
         <div className="col-md-3">
           <div className="imgAb5t img-cart">
@@ -14,8 +15,7 @@ function CartSummaryItem(props) {
           </div>
         </div>
         <div className="col-md-9 mt-2">
-          <h5 className="d-inline">{props.product.name}</h5>
-          <i className="far fa-times-circle cursor-pointer float-right " onClick={handleCancle}></i>
+
           <p className='text-muted'>${price}</p>
           <p>{props.product.shortDescription}</p>
         </div>

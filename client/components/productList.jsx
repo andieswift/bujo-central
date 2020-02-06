@@ -30,7 +30,7 @@ export default class App extends React.Component {
       shortDescription={item.shortDescription}
       key={item.productId}/>);
     return (
-      <div className="card-container d-flex flex-row flex-wrap justify-content-center">
+      <div className="card-container d-flex flex-row flex-wrap justify-content-center m-2">
         {elements}
       </div>);
   }
