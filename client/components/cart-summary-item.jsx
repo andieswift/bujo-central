@@ -6,18 +6,19 @@ function CartSummaryItem(props) {
     props.deleteItem(props.product);
   }
   return (
-    <div className="card container w-100 p-2 mb-3">
+    <div className="card container cart-container p-2 mb-3 col-12">
       <h2>{props.product.name} <i className="far fa-times-circle cursor-pointer float-right" onClick={handleCancle}></i></h2>
       <div className="row">
         <div className="col-md-3">
-          <div className="imgAb5t img-cart">
-            <img className='w-100 m-2' src={props.product.image}></img>
+          <div className="imgAbt img-cart">
+            <img className='w-100' src={props.product.image}></img>
           </div>
         </div>
         <div className="col-md-9 mt-2">
-
-          <p className='text-muted'>${price}</p>
-          <p>{props.product.shortDescription}</p>
+          <div className="card-body">
+            <p className='text-muted'>${price}</p>
+            <p>{props.product.shortDescription}</p>
+          </div>
         </div>
       </div>
     </div>
