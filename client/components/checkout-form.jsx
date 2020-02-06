@@ -46,7 +46,7 @@ export default class App extends React.Component {
         shippingAddress: this.state.shippingAddress
       });
     } else {
-      this.setState({ emptyfields: 'Please fill out all the feilds.' });
+      this.setState({ emptyfields: 'Please fill out all the fields.' });
     }
   }
 
