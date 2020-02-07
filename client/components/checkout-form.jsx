@@ -61,7 +61,7 @@ export default class App extends React.Component {
             <input type="text" value = {this.state.name} onChange={this.handleNameChange} className="form-control"></input>
           </div>
           <div className="form-group">
-            <label>CreditCard</label>
+            <label>Credit Card</label>
             <input type="text" value={this.state.CreditCard} onChange={this.handleCreditCardChange}className="form-control"></input>
           </div>
           <div className="form-group">
