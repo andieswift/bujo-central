@@ -100,11 +100,11 @@ export default class App extends React.Component {
       view = <CheckoutForm placeOrder = {this.placeOrder} setView={this.setView} cartItems={this.state.cart} />;
     }
     return (
-      <>
+      <div className="dotted-background">
         <Header setView= {this.setView} cartItemCount = {this.state.cart.length}/>
-        <div className="p-3 hgt-100 bg-light">
+        <div className="p-3 hgt-100">
           {view}
         </div>
-      </>);
+      </div>);
   }
 }

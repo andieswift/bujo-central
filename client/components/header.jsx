@@ -13,13 +13,11 @@ function Header(props) {
   }
 
   return (
-    <div className= 'p-3 col-12 bg-dark'>
-      <div className='ml-2'>
-        <i className='text-light fas fa-dollar-sign'></i>
-        <h5 className='ml-2 d-inline text-light'>Wicked Sales</h5>
-        <i className='text-light mt-1 mr-2 fas fa-shopping-cart float-right cursor-pointer' onClick={handleCartClick}></i>
-        <p className='mr-2 d-inline text-light float-right cursor-pointer' onClick={handleCartClick}>{item}</p>
-
+    <div className= 'p-3 col-12 water-color-header'>
+      <div className='ml-2 d-flex align-items-center justify-content-between'>
+        <img className="logo" alt="Bujo Central" src="/images/logo.png"></img>
+        <h5 className='mr-2 d-inline cursor-pointer' onClick={handleCartClick}> <i className='mt-1 mr-2 fas fa-shopping-cart cursor-pointer'></i>
+          {item}</h5>
       </div>
     </div>
   );

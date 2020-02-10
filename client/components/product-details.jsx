@@ -30,6 +30,18 @@ export default class ProductDetails extends React.Component {
     this.getProductDetails();
   }
 
+  getLongDescription() {
+    const longDescript = this.state.product.longDescription.split('\n');
+    const displayLongDescript = longDescript.map((value, index) => {
+      if (index === 0) {
+        return <h5>{value.slice(2)}</h5>;
+      } else if (index < longDescript.length - 1) {
+        return <li className="m-0" key={index}>{value.slice(2)}</li>;
+      }
+    });
+    return displayLongDescript;
+  }
+
   render() {
     let product = null;
 
@@ -43,7 +55,7 @@ export default class ProductDetails extends React.Component {
           <div className="row">
             <div className="col-md-4">
               <div className="imgAbt">
-                <img className=' w-100' src={this.state.product.image}></img>
+                <img className=' w-100' src={'./images/' + this.state.product.image}></img>
               </div>
             </div>
             <div className="p-2 col-md-8">
@@ -53,7 +65,7 @@ export default class ProductDetails extends React.Component {
               <button type="button" className="btn btn-primary" onClick={this.handleAddToCart}>Add to Cart</button>
             </div>
           </div>
-          <p>{this.state.product.longDescription}</p>
+          <div>{this.getLongDescription()}</div>
         </div>
       );
     }

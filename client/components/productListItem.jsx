@@ -8,7 +8,7 @@ function ProductListItem(props) {
   }
   return (
     <div className='card col-sm-12 col-md-3 bg-white m-2 cursor-pointer' onClick={handleClick}>
-      <img className = 'mt-2 card-img-top img-card' src={props.image}></img>
+      <img className = 'mt-2 card-img-top img-card' src={'./images/' + props.image}></img>
       <div className= 'p-3 card-body'>
         <h5>{props.name}</h5>
         <p className= 'text-muted'>${price}</p>

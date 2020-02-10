@@ -1,3 +1,19 @@
+.dotted-background {
+background-image: url(./images/dots.png);
+background-size: 50%;
+}
+
+.water-color-header{
+  background-image: url(./images/header.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 80%;
+}
+
+.logo{
+  width: 15%;
+}
+
 .img-card{
   object-fit: contain;
   height: 200px;
@@ -19,9 +35,16 @@
   font-size: 2rem;
 }
 
-@media only screen
-and (max-device-width : 736px)
-and (orientation : landscape) {
+@media only screen and (max-device-width: 812px) and (orientation: portrait) {
+  .logo{
+    width: 40%;
+  }
+}
+
+@media only screen and (max-device-width : 736px) and (orientation : landscape) {
+  .logo{
+    width: 20%;
+  }
   .cart-container{
     width: 75%;
   }
