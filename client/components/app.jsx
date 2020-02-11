@@ -4,6 +4,8 @@ import ProductList from './productList';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
+import HeroImg from './hero-img';
+import Footer from './footer';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -102,9 +104,12 @@ export default class App extends React.Component {
     return (
       <div className="dotted-background">
         <Header setView= {this.setView} cartItemCount = {this.state.cart.length}/>
+        <HeroImg />
+        <div className="white sticky-top vh-15"></div>
         <div className="p-3 hgt-100">
           {view}
         </div>
+        <Footer />
       </div>);
   }
 }
