@@ -32,7 +32,7 @@ function CartSummary(props) {
   const cartItems = props.cartItems.map(item => <CartSummaryItem deleteItem={props.deleteItem} key={item.cartItemId} product={item} />);
 
   return (
-    <div>
+    <div className="pt-5 p-2 mt-md-5">
       <p className=" m-1 text-muted cursor-pointer" onClick={handleBackClick}><i className="fas fa-arrow-left"></i> Back to Catalog</p>
       <h1 className= "ml-3"> My Cart </h1>
       {cartItems}

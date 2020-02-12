@@ -50,22 +50,24 @@ export default class ProductDetails extends React.Component {
     } else {
       const price = (this.state.product.price / 100).toFixed(2);
       product = (
-        <div className="card container">
-          <p className=" text-muted cursor-pointer" onClick={this.handleBackClick}><i className="fas fa-arrow-left"></i> Back to Catalog</p>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="imgAbt">
-                <img className=' w-100' src={'./images/' + this.state.product.image}></img>
+        <div className="pt-5 p-2 mt-md-5">
+          <div className="card container">
+            <p className=" text-muted cursor-pointer" onClick={this.handleBackClick}><i className="fas fa-arrow-left"></i> Back to Catalog</p>
+            <div className="row">
+              <div className="col-md-4">
+                <div className="imgAbt">
+                  <img className=' w-100' src={'./images/' + this.state.product.image}></img>
+                </div>
+              </div>
+              <div className="p-2 col-md-8">
+                <h5>{this.state.product.name}</h5>
+                <p className='text-muted'>${price}</p>
+                <p>{this.state.product.shortDescription}</p>
+                <button type="button" className="btn btn-primary" onClick={this.handleAddToCart}>Add to Cart</button>
               </div>
             </div>
-            <div className="p-2 col-md-8">
-              <h5>{this.state.product.name}</h5>
-              <p className='text-muted'>${price}</p>
-              <p>{this.state.product.shortDescription}</p>
-              <button type="button" className="btn btn-primary" onClick={this.handleAddToCart}>Add to Cart</button>
-            </div>
+            <div>{this.getLongDescription()}</div>
           </div>
-          <div>{this.getLongDescription()}</div>
         </div>
       );
     }

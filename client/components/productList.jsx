@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductListItem from './productListItem';
+import HeroImg from './hero-img';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -30,8 +31,12 @@ export default class App extends React.Component {
       shortDescription={item.shortDescription}
       key={item.productId}/>);
     return (
-      <div className="card-container d-flex flex-row flex-wrap justify-content-center m-2">
-        {elements}
-      </div>);
+      <>
+        <HeroImg />
+        <div className="white sticky-top"></div>
+        <div className="card-container d-flex flex-row flex-wrap justify-content-center m-2">
+          {elements}
+        </div>
+      </>);
   }
 }

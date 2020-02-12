@@ -18,15 +18,17 @@ background-size: 50%;
   background-color: white;
   background-image: url(./images/dots.png);
   background-size: 50%;
+  background-position: center;
+  height: 10vh;
 }
 
-.vh-15{
-  height: 15vh;
+h1{
+  font-size: 4rem;
 }
-
 .hero-img{
   background-image: url(./images/white-blank-notebook-733857.jpg);
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 70vh;
 }
 
@@ -41,6 +43,7 @@ background-size: 50%;
 .footer-logo{
   width: 20%;
 }
+
 .img-card{
   object-fit: contain;
   height: 200px;
@@ -62,17 +65,63 @@ background-size: 50%;
   font-size: 2rem;
 }
 
+@media only screen and (max-device-width: 1366px) and (orientation: portrait){
+  .logo{
+    width: 20%;
+  }
+  .hero-img{
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+  .logo{
+    width: 25%;
+  }
+
+  .white{
+    height: 6vh;
+  }
+  h1{
+    font-size: 3rem;
+  }
+}
+
 @media only screen and (max-device-width: 812px) and (orientation: portrait) {
   .logo{
     width: 40%;
   }
+
+  .footer-logo{
+    width: 50%;
+  }
+
+  h1{
+    font-size: 2rem;
+  }
+
+  .white{
+    height: 7vh;
+  }
 }
 
-@media only screen and (max-device-width : 736px) and (orientation : landscape) {
+@media only screen and (max-device-width: 768px) and (orientation: portrait){
+  h1{
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-device-width: 736px) and (orientation: landscape) {
   .logo{
     width: 20%;
   }
   .cart-container{
     width: 75%;
+  }
+}
+
+@media only screen and (max-device-width: 375px) and (orientation: portrait){
+  h1{
+    font-size: 2em;
   }
 }

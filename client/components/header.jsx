@@ -13,7 +13,7 @@ function Header(props) {
   }
 
   return (
-    <div className= 'p-3 col-12 water-color-header fixed-top fixed-top'>
+    <div className= 'col-12 water-color-header fixed-top fixed-top'>
       <div className='ml-2 d-flex align-items-center justify-content-between'>
         <img className="logo" alt="Bujo Central" src="/images/logo.png"></img>
         <h5 className='mr-2 d-inline cursor-pointer' onClick={handleCartClick}> <i className='mt-1 mr-2 fas fa-shopping-cart cursor-pointer'></i>
