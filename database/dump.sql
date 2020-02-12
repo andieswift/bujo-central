@@ -229,23 +229,9 @@ ALTER TABLE ONLY public.products ALTER COLUMN "productId" SET DEFAULT nextval('p
 --
 
 COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
-1	7	2	2595
-2	8	2	2595
-3	9	2	2595
-4	10	2	2595
-5	10	2	2595
-6	10	2	2595
-7	11	2	2595
-8	11	1	2999
-9	11	3	2900
-10	11	5	9900
-11	11	6	830
-12	12	1	2999
-13	12	1	2999
-14	12	2	2595
-15	12	3	2900
-16	12	4	999
-17	12	6	830
+63	25	3	999
+64	25	5	6
+65	26	1	3995
 \.
 
 
@@ -254,18 +240,8 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 --
 
 COPY public.carts ("cartId", "createdAt") FROM stdin;
-1	2020-01-14 15:40:26.737872-08
-2	2020-01-14 15:43:18.26994-08
-3	2020-01-14 15:44:48.875068-08
-4	2020-01-14 15:46:06.797939-08
-5	2020-01-14 15:47:42.795695-08
-6	2020-01-14 15:48:12.541517-08
-7	2020-01-14 15:53:51.476249-08
-8	2020-01-14 16:02:26.873116-08
-9	2020-01-14 16:03:45.332287-08
-10	2020-01-14 16:04:39.063823-08
-11	2020-01-14 17:56:35.313281-08
-12	2020-01-15 11:25:20.906546-08
+25	2020-02-10 18:21:12.719191-08
+26	2020-02-11 17:13:36.079937-08
 \.
 
 
@@ -282,12 +258,12 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+1	New Leuchtturn 1917 Dotted Medium Notebook	3995	dotted-journal.jpg	Write your thoughts or sketch artistic figures in this dotted journal by Leuchtturn 1917. Simple and charming, this dot journal is a must-have for anyone who enjoys drawing or writing.	\\n Details:\n\\n Ice Blue\n\\n 7" x 10" (journal size)\n\\n 128 unlined pages (80 gsm)\n\\n Soft PU cover\n\\n Wood-free dotted paper\n\\n Includes 2 ribbons
+2	Tombow Dual Brush Pens, Bright	1699	Tombow-brush-pens.jpg	Give your artwork a burst of color with these dual brush pens from Tombow. They sport fine and brush tips for minute details and broad strokes. With the blender pen, you can blend shades to achieve subtle shaded effects.	\\n Details:\n\\n Includes assorted colors\n\\n Includes 10 pieces\n\\n Dual brush and fine tips\n\\n Blendable, water-based ink\n\\n Long-lasting nylon brush tip\n\\n Self-cleaning tips\n\\n Acid free and odorless\n\\n Conforms to ASTM D-4236\n
+3	Pigma Micron Black Pen, 3ct.	999	micron-pens.webp	Make entries in your daily planners, journals or log books, with these black pens from Pigma. These pens are also perfect to create lovely illustrations in your scrapbooks, memory albums and more.\n	\\n Details:\n\\n Available in multiple sizes\n\\n Black\n\\n 3 pens\n\\n Waterproof, archival quality ink\n\\n Fade and chemical resistant\n\\n Smear, feather and bleed resistant\n\\n Not recommended for use on fabrics intended to be washed\n\\n AP Certified\n\\n Conforms to ASTM D-4236\n
+4	Gelly Roll Classic white Fine Point Pen	199	gell-roll-white.webp	Let your thoughts freely flow on paper, with this fine point gel pen from Gelly Roll. It is also ideal for use on scrapbook pages, legal documents and other places where permanence is essential.\n	\\n Details:\n\\n White\n\\n 0.3 mm line\n\\n Ice Cream Smooth ink\n\\n Waterproof, archival quality ink\n\\n Fade and chemical resistant\n\\n Smear, feather and bleed resistant\n\\n Not recommended for use on fabrics intended to be washed\n\\n AP Certified\n\\n Conforms to ASTM D-4236\n
+5	Paper Mate InkJoy Black Gel Pen Set	6	paper-mate-black.webp	These black gel pens from Paper Mate are sure to make a useful addition to your stationery supplies. You can use them to write in your notebooks, diaries and daily planners. They are also perfect to create crisp and neat outlines or borders.	\\n Details:\n\\n Black\n\\n 0.7 mm medium point\n\\n 3 gel pens\n\\n Quick-drying, smooth ink\n\\n Reduced smearing\n\\n Comfortable grip\n
+6	Creative Year Tracker Stamp & Stencil Set By Recollections	10	clear-stamp.webp	Accentuate your planners with these stamps and stencils by Recollections. You can use the stencils to create pretty patterns and designs on your papercraft projects. The stamps can also be used with an acrylic block to personalize your handmade cards, scrapbooks and journals.\n	\\n Details:\n\\n Includes 18 pieces\n\\n Silicone and plastic\n
 \.
 
 
@@ -295,28 +271,28 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 17, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 65, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 12, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 26, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 1, false);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 12, true);
 
 
 --
 -- Name: products_productId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."products_productId_seq"', 1, false);
+SELECT pg_catalog.setval('public."products_productId_seq"', 6, true);
 
 
 --
