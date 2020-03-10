@@ -5,6 +5,7 @@ import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
 import Footer from './footer';
+import WelcomeModal from './welcome-modal';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -102,9 +103,12 @@ export default class App extends React.Component {
     }
     return (
       <div className="dotted-background">
+
         <Header setView= {this.setView} cartItemCount = {this.state.cart.length}/>
         <div className="hgt-100">
+
           {view}
+          <WelcomeModal />
         </div>
         <Footer />
       </div>);
