@@ -13,6 +13,7 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
+      welcomeModalView: true,
       view: {
         name: 'catalog',
         params: {}
@@ -23,6 +24,7 @@ export default class App extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
+    this.welcomeModalState = this.welcomeModalState.bind(this);
   }
 
   setView(name, params) {
@@ -90,6 +92,20 @@ export default class App extends React.Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
+  welcomeModalState(params) {
+    if (params === 'accepted') {
+      this.setState({ welcomeModalView: false });
+    } else {
+      this.setState({ welcomeModalView: true });
+    }
+  }
+
+  welcomeModalToggle() {
+    if (this.state.welcomeModalView) {
+      return <WelcomeModal modalState={this.welcomeModalState}/>;
+    }
+  }
+
   render() {
     let view = null;
     if (this.state.view.name === 'details') {
@@ -103,12 +119,10 @@ export default class App extends React.Component {
     }
     return (
       <div className="dotted-background">
-
         <Header setView= {this.setView} cartItemCount = {this.state.cart.length}/>
         <div className="hgt-100">
-
+          {this.welcomeModalToggle()}
           {view}
-          <WelcomeModal />
         </div>
         <Footer />
       </div>);
