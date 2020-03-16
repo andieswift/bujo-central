@@ -1,3 +1,7 @@
+.modal-bg{
+  background-color: rgba(0,0,0,.2);
+}
+
 .dotted-background {
 background-image: url(./images/dots.png);
 background-size: 50%;
@@ -64,6 +68,26 @@ h1{
 
 .fa-times-circle{
   font-size: 2rem;
+}
+
+@keyframes modalFade {
+  from {transform: translateY(-50%);opacity: 0;}
+  to {transform: translateY(0);opacity: 1;}
+}
+
+.modal-start {
+  animation-name: modalFade;
+  animation-duration: 1.5s;
+}
+
+.modal-end {
+  animation-name: modalFadeDown;
+  animation-duration: 1.5s;
+}
+
+@keyframes modalFadeDown {
+  from {transform: translateY(0);opacity: 1;}
+  to {transform: translateY(-50%);opacity: 0;}
 }
 
 @media only screen and (max-device-width: 1366px) and (orientation: portrait){

@@ -1,10 +1,12 @@
 import React from 'react';
+import CartModal from './cart-modal';
 
 export default class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: null
+      product: null,
+      showModal: false
     };
     this.handleBackClick = this.handleBackClick.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
@@ -24,6 +26,7 @@ export default class ProductDetails extends React.Component {
 
   handleAddToCart() {
     this.props.addToCart(this.state.product);
+    this.setState({ showModal: true });
   }
 
   componentDidMount() {
@@ -42,6 +45,12 @@ export default class ProductDetails extends React.Component {
     return displayLongDescript;
   }
 
+  modal() {
+    if (this.state.showModal) {
+      return <CartModal itemName = {this.state.product.name} modalState = {this.props.setView}/>;
+    }
+  }
+
   render() {
     let product = null;
 
@@ -52,6 +61,7 @@ export default class ProductDetails extends React.Component {
       product = (
         <div className="pt-5 p-2 mt-md-5">
           <div className="card container">
+            {this.modal()}
             <p className=" text-muted cursor-pointer" onClick={this.handleBackClick}><i className="fas fa-arrow-left"></i> Back to Catalog</p>
             <div className="row">
               <div className="col-md-4">
