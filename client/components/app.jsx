@@ -13,9 +13,9 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
-      welcomeModalView: false,
+      welcomeModalView: true,
       view: {
-        name: 'cart',
+        name: 'catalog',
         params: {}
       },
       cart: []
