@@ -51,7 +51,7 @@ class WelcomeModal extends React.Component {
             <form>
               <div className="modal-body">
                 <p>Please note that this website is a content mangagement application created for the purpose of demostration. Check the box below to acknowledge that the merchandise shown here
-              is not available for purchase, that you will ot provide genuine financial or personal information, and that you are aware no purchase will truly be processed.
+              is not available for purchase, that you will not provide genuine financial or personal information, and that you are aware no purchase will truly be processed.
                 </p>
                 <input className="d-inline is-valid" type="checkbox" aria-label="Checkbox for following text input" value={this.state.checkbox} onChange={this.checkboxChange} required/>
                 <p className='d-inline'>I acknowledge that this is strictly a demo application</p>
