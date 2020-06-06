@@ -26,7 +26,7 @@ class WelcomeModal extends React.Component {
           this.props.modalState('accepted');
         }.bind(this)
         ,
-        1500
+        700
       );
     }
   }
@@ -54,7 +54,7 @@ class WelcomeModal extends React.Component {
               is not available for purchase, that you will not provide genuine financial or personal information, and that you are aware no purchase will truly be processed.
                 </p>
                 <input className="d-inline is-valid" type="checkbox" aria-label="Checkbox for following text input" value={this.state.checkbox} onChange={this.checkboxChange} required/>
-                <p className='d-inline'>I acknowledge that this is strictly a demo application</p>
+                <p className='d-inline'> I acknowledge that this is strictly a demo application</p>
               </div>
               <div className="modal-footer">
                 <button type="submit" className="btn btn-secondary" onClick={this.closeModal}>Close</button>

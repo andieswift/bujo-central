@@ -77,12 +77,16 @@ h1{
 
 .modal-start {
   animation-name: modalFade;
-  animation-duration: 1.5s;
+  animation-duration: .7s;
+}
+
+.list-item {
+  height: 484px;
 }
 
 .modal-end {
   animation-name: modalFadeDown;
-  animation-duration: 1.5s;
+  animation-duration: .7s;
 }
 
 @keyframes modalFadeDown {
@@ -110,6 +114,17 @@ h1{
   h1{
     font-size: 3rem;
   }
+
+  .list-item {
+  height:525px;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+  .list-item{
+    height: 520px;
+  }
+
 }
 
 @media only screen and (max-device-width: 812px) and (orientation: portrait) {
@@ -134,6 +149,10 @@ h1{
   h1{
     font-size: 3rem;
   }
+
+  .list-item {
+  height: 505px;
+  }
 }
 
 @media only screen and (max-device-width: 736px) and (orientation: landscape) {
@@ -143,10 +162,18 @@ h1{
   .cart-container{
     width: 75%;
   }
+
+  .list-item{
+    height: fit-content;
+  }
 }
 
-@media only screen and (max-device-width: 375px) and (orientation: portrait){
+@media only screen and (max-device-width: 412px) and (orientation: portrait){
   h1{
     font-size: 2em;
+  }
+
+   .list-item{
+    height: fit-content;
   }
 }
