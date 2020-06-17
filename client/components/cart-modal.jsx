@@ -30,7 +30,7 @@ class CartModal extends React.Component {
         this.props.modalState('cart');
       }.bind(this)
       ,
-      1500
+      700
     );
 
   }
