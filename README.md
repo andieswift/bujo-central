@@ -22,4 +22,4 @@ Link: https://bujo-central.andieswift.dev/
 - User can enter their purchase information
 
 ## Preview
-![Screenshot of App](server/public/images/wicked-sales.gif)
+![Screenshot of App](server/public/images/screenShot.PNG)
