@@ -11,9 +11,6 @@ Full-stack e-commerce experience for bullet journaling supplies.
 - Node.js
 - AWS EC2
 
-## Live Demo
-Link: https://bujo-central.andieswift.dev/
-
 ## Features
 - User can view list of all products
 - User can view details of all products
